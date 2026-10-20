@@ -164,9 +164,13 @@ window.ODE = window.ODE || {};
       }
       if (pointer && current.f) {
         var m = current.f(pointer.x, pointer.y);
-        plot.label(pointer.x, pointer.y,
+        /* keep the hover label inside the canvas: flip side near the right edge */
+        var frac = (pointer.x - range.xmin) / (range.xmax - range.xmin);
+        var right = frac > 0.62;
+        plot.label(pointer.x, Math.min(Math.max(pointer.y, range.ymin + (range.ymax - range.ymin) * 0.06),
+          range.ymax - (range.ymax - range.ymin) * 0.06),
           '(' + ODE.fmt(pointer.x, 2) + ', ' + ODE.fmt(pointer.y, 2) + ')  y′=' + ODE.fmt(m, 3),
-          { dx: 8, dy: -10, color: ODE.cssVar('--muted') });
+          { dx: right ? -8 : 8, dy: -10, align: right ? 'right' : 'left', color: ODE.cssVar('--muted') });
         plot.dot(pointer.x, pointer.y, { r: 3, color: ODE.cssVar('--muted') });
       }
       renderInfo();
