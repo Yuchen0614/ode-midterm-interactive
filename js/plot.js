@@ -455,7 +455,8 @@ window.ODE = window.ODE || {};
     var dragging = false;
     c.addEventListener('pointerdown', function (ev) {
       var p = pos(ev); if (!p) return;
-      dragging = true; c.setPointerCapture(ev.pointerId);
+      dragging = true;
+      try { c.setPointerCapture(ev.pointerId); } catch (e) { /* synthetic / stale pointer */ }
       cb(p, 'down'); ev.preventDefault();
     });
     c.addEventListener('pointermove', function (ev) {
