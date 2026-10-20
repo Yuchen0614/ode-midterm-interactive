@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ODE 期中考互動學習站 · 常微分方程 Ordinary Differential Equations</title>
+<meta name="description" content="常微分方程期中考互動學習站：基本觀念、可分離、正合、一階線性、二階齊次、常係數、Euler–Cauchy、存在唯一性。中英對照、逐步詳解例題、方向場實驗室、題庫與單字卡。">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%233b5bdb'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='bold' fill='white' text-anchor='middle'>y&#8242;</text></svg>">
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="readbar" id="readbar"></div>
+
+<header class="topbar">
+  <button class="btn ghost mobmenu" id="mobmenu" aria-label="選單">☰</button>
+  <a class="brand" href="#/" style="text-decoration:none;color:inherit">
+    <span class="logo">y′</span>
+    <span>
+      <div class="name">ODE 期中考互動學習站</div>
+      <div class="sub">Ordinary Differential Equations · 中英對照</div>
+    </span>
+  </a>
+  <span class="spacer"></span>
+  <div class="actions">
+    <button class="btn" id="btn-quiz" title="開始測驗">✎ 測驗</button>
+    <button class="btn" id="btn-theme" title="切換深色／淺色">◐</button>
+    <svg class="ring" viewBox="0 0 40 40" id="ring" title="學習進度">
+      <circle class="bg" cx="20" cy="20" r="16"></circle>
+      <circle class="fg" cx="20" cy="20" r="16" stroke-dasharray="100.5" stroke-dashoffset="100.5"
+              transform="rotate(-90 20 20)"></circle>
+      <text x="20" y="24" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor"
+            font-family="monospace" id="ringtxt">0%</text>
+    </svg>
+  </div>
+</header>
+
+<div class="shell with-toc" id="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="search">
+      <input type="search" id="q" placeholder="搜尋內容…（例：Wronskian）" autocomplete="off" spellcheck="false">
+    </div>
+    <div id="nav"></div>
+  </aside>
+
+  <main id="view" tabindex="-1"></main>
+
+  <aside class="toc" id="toc"></aside>
+</div>
+
+<div class="fab">
+  <button class="btn primary" id="fab-top" title="回到頂端">↑</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/katex/contrib/auto-render.min.js"></script>
+<script src="js/data/core.js"></script>
+<script src="js/data/extra.js"></script>
+<script src="js/data/quiz.js"></script>
+<script src="js/data/cards.js"></script>
+<script src="js/store.js"></script>
+<script src="js/plot.js"></script>
+<script src="js/render.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/widgets2.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
